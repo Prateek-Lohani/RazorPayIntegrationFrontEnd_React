@@ -9,9 +9,9 @@ const Home = () => {
 
     const handleCheckout=async(amount)=>{
 
-        const {data:{key}}=await axios.get('https://razorpayintegrationbackend-react-5.onrender.com/api/apikey');
+        const {data:{key}}=await axios.get('https://razorpayintegrationbackend-react.onrender.com/api/apikey');
 
-        const {data:{order}}=await axios.post('https://razorpayintegrationbackend-react-5.onrender.com/api/checkout',{
+        const {data:{order}}=await axios.post('https://razorpayintegrationbackend-react.onrender.com/api/checkout',{
             amount
         })
 
@@ -24,7 +24,7 @@ const Home = () => {
             description: "Test Transaction",
             image: "https://prateeklohani.netlify.app/favicon.png",
             order_id: order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            callback_url: "https://razorpayintegrationbackend-react-5.onrender.com/api/paymentVerification",
+            callback_url: "https://razorpayintegrationbackend-react.onrender.com/api/paymentVerification",
             prefill: {
                 "name": "Demo User",
                 "email": "demo.user@example.com",
